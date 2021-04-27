@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=full_temp.X
+PROJECTNAME=DA_VXL_ASM_Git
 
 # Active Configuration
 DEFAULTCONF=default

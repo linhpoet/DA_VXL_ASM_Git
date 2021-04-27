@@ -1,4 +1,4 @@
-MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  12:44:02         PAGE  1
+MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  20:09:48         PAGE  1
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -57,7 +57,7 @@ Warning[205]: Found directive in column 1. (PROCESSOR)
                       00033   CONFIG  CP3 = OFF             ; Code Protection bit (Block 3 (006000-007FFFh) not code-protected)
                       00034 
                       00035 ; CONFIG5H
-MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  12:44:02         PAGE  2
+MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  20:09:48         PAGE  2
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -116,7 +116,7 @@ Warning[205]: Found directive in column 1. (org)
 Warning[203]: Found opcode in column 1. (goto)
 000000 EF?? F???      00075 goto main
                       00076 
-MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  12:44:02         PAGE  3
+MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  20:09:48         PAGE  3
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -175,7 +175,7 @@ Warning[203]: Found opcode in column 1. (movwf)
 Warning[203]: Found opcode in column 1. (movlw)
 000058 0E00           00106 movlw 0x00
 Warning[203]: Found opcode in column 1. (movwf)
-MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  12:44:02         PAGE  4
+MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  20:09:48         PAGE  4
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -212,540 +212,544 @@ Warning[203]: Found opcode in column 1. (call)
 Warning[203]: Found opcode in column 1. (movff)
 00007C C042 F041      00123 movff muc_temp, muc
 000080                00124 loop
+Warning[203]: Found opcode in column 1. (movlw)
+000080 0E00           00125 movlw 0x00
+Warning[203]: Found opcode in column 1. (movwf)
+000082 6EF2           00126 movwf INTCON
 Warning[203]: Found opcode in column 1. (goto)
-000080 EF?? F???      00125 goto loop
-                      00126 
-                      00127 
-000084                00128 start
+000084 EF?? F???      00127 goto loop
+                      00128 
+                      00129 
+000088                00130 start
 Warning[203]: Found opcode in column 1. (movf)
-000084 5041           00129 movf muc,0                  ;copy muc into W
+000088 5041           00131 movf muc,0                  ;copy muc into W
 Warning[203]: Found opcode in column 1. (xorlw)
-000086 0A00           00130 xorlw D'0'                  ;xor W with 0; if W=0, Z=1 else Z=0
+00008A 0A00           00132 xorlw D'0'                  ;xor W with 0; if W=0, Z=1 else Z=0
 Warning[203]: Found opcode in column 1. (btfsc)
-000088 B4D8           00131 btfsc STATUS,Z              ;skip next instruction if Z=0
+00008C B4D8           00133 btfsc STATUS,Z              ;skip next instruction if Z=0
 Warning[203]: Found opcode in column 1. (call)
-00008A EC?? F???      00132 call muc_1                  ;so if muc=0, call muc_1
-                      00133 ;tuong tu phia tren
+00008E EC?? F???      00134 call muc_1                  ;so if muc=0, call muc_1
+                      00135 ;tuong tu phia tren
 Warning[203]: Found opcode in column 1. (movf)
-00008E 5041           00134 movf muc,0
+000092 5041           00136 movf muc,0
 Warning[203]: Found opcode in column 1. (xorlw)
-000090 0A00           00135 xorlw D'0'                  ;if W != 0, Z=0
+000094 0A00           00137 xorlw D'0'                  ;if W != 0, Z=0
+MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  20:09:48         PAGE  5
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
 Warning[203]: Found opcode in column 1. (btfss)
-000092 A4D8           00136 btfss STATUS,Z              ;skip next instruction if Z=1
+000096 A4D8           00138 btfss STATUS,Z              ;skip next instruction if Z=1
 Warning[203]: Found opcode in column 1. (call)
-000094 EC?? F???      00137 call muc_0                  ;so if muc != 0, call muc_0
-MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  12:44:02         PAGE  5
+000098 EC?? F???      00139 call muc_0                  ;so if muc != 0, call muc_0
+Warning[203]: Found opcode in column 1. (movff)
+00009C C042 F041      00140 movff muc_temp, muc
+Warning[203]: Found opcode in column 1. (return)
+0000A0 0012           00141 return
+                      00142 
+                      00143 
+0000A2                00144 Up
+Warning[203]: Found opcode in column 1. (movf)
+0000A2 5041           00145 movf muc,0
+Warning[203]: Found opcode in column 1. (xorlw)
+0000A4 0A00           00146 xorlw D'0'
+Warning[203]: Found opcode in column 1. (btfsc)
+0000A6 B4D8           00147 btfsc STATUS,Z
+Warning[203]: Found opcode in column 1. (return)
+0000A8 0012           00148 return
+Warning[203]: Found opcode in column 1. (movf)
+0000AA 5041           00149 movf muc,0
+Warning[203]: Found opcode in column 1. (xorlw)
+0000AC 0A01           00150 xorlw D'1'
+Warning[203]: Found opcode in column 1. (btfsc)
+0000AE B4D8           00151 btfsc STATUS,Z
+Warning[203]: Found opcode in column 1. (call)
+0000B0 EC?? F???      00152 call muc_2
+Warning[203]: Found opcode in column 1. (movf)
+0000B4 5041           00153 movf muc,0
+Warning[203]: Found opcode in column 1. (xorlw)
+0000B6 0A02           00154 xorlw D'2'
+Warning[203]: Found opcode in column 1. (btfsc)
+0000B8 B4D8           00155 btfsc STATUS,Z
+Warning[203]: Found opcode in column 1. (call)
+0000BA EC?? F???      00156 call muc_3
+Warning[203]: Found opcode in column 1. (movff)
+0000BE C042 F041      00157 movff muc_temp, muc
+Warning[203]: Found opcode in column 1. (return)
+0000C2 0012           00158 return
+                      00159 
+                      00160 
+0000C4                00161 Down
+Warning[203]: Found opcode in column 1. (movf)
+0000C4 5041           00162 movf muc,0
+Warning[203]: Found opcode in column 1. (xorlw)
+0000C6 0A00           00163 xorlw D'0'
+Warning[203]: Found opcode in column 1. (btfsc)
+0000C8 B4D8           00164 btfsc STATUS,Z
+Warning[203]: Found opcode in column 1. (return)
+0000CA 0012           00165 return
+Warning[203]: Found opcode in column 1. (movf)
+0000CC 5041           00166 movf muc,0
+Warning[203]: Found opcode in column 1. (xorlw)
+MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  20:09:48         PAGE  6
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
+0000CE 0A03           00167 xorlw D'3'
+Warning[203]: Found opcode in column 1. (btfsc)
+0000D0 B4D8           00168 btfsc STATUS,Z
+Warning[203]: Found opcode in column 1. (call)
+0000D2 EC?? F???      00169 call muc_2
+Warning[203]: Found opcode in column 1. (movf)
+0000D6 5041           00170 movf muc,0
+Warning[203]: Found opcode in column 1. (xorlw)
+0000D8 0A02           00171 xorlw D'2'
+Warning[203]: Found opcode in column 1. (btfsc)
+0000DA B4D8           00172 btfsc STATUS,Z
+Warning[203]: Found opcode in column 1. (call)
+0000DC EC?? F???      00173 call muc_1
 Warning[203]: Found opcode in column 1. (movff)
-000098 C042 F041      00138 movff muc_temp, muc
+0000E0 C042 F041      00174 movff muc_temp, muc
 Warning[203]: Found opcode in column 1. (return)
-00009C 0012           00139 return
-                      00140 
-                      00141 
-00009E                00142 Up
-Warning[203]: Found opcode in column 1. (movf)
-00009E 5041           00143 movf muc,0
-Warning[203]: Found opcode in column 1. (xorlw)
-0000A0 0A00           00144 xorlw D'0'
-Warning[203]: Found opcode in column 1. (btfsc)
-0000A2 B4D8           00145 btfsc STATUS,Z
-Warning[203]: Found opcode in column 1. (return)
-0000A4 0012           00146 return
-Warning[203]: Found opcode in column 1. (movf)
-0000A6 5041           00147 movf muc,0
-Warning[203]: Found opcode in column 1. (xorlw)
-0000A8 0A01           00148 xorlw D'1'
-Warning[203]: Found opcode in column 1. (btfsc)
-0000AA B4D8           00149 btfsc STATUS,Z
-Warning[203]: Found opcode in column 1. (call)
-0000AC EC?? F???      00150 call muc_2
-Warning[203]: Found opcode in column 1. (movf)
-0000B0 5041           00151 movf muc,0
-Warning[203]: Found opcode in column 1. (xorlw)
-0000B2 0A02           00152 xorlw D'2'
-Warning[203]: Found opcode in column 1. (btfsc)
-0000B4 B4D8           00153 btfsc STATUS,Z
-Warning[203]: Found opcode in column 1. (call)
-0000B6 EC?? F???      00154 call muc_3
-Warning[203]: Found opcode in column 1. (movff)
-0000BA C042 F041      00155 movff muc_temp, muc
-Warning[203]: Found opcode in column 1. (return)
-0000BE 0012           00156 return
-                      00157 
-                      00158 
-0000C0                00159 Down
-Warning[203]: Found opcode in column 1. (movf)
-0000C0 5041           00160 movf muc,0
-Warning[203]: Found opcode in column 1. (xorlw)
-0000C2 0A00           00161 xorlw D'0'
-Warning[203]: Found opcode in column 1. (btfsc)
-0000C4 B4D8           00162 btfsc STATUS,Z
-Warning[203]: Found opcode in column 1. (return)
-0000C6 0012           00163 return
-Warning[203]: Found opcode in column 1. (movf)
-0000C8 5041           00164 movf muc,0
-Warning[203]: Found opcode in column 1. (xorlw)
-0000CA 0A03           00165 xorlw D'3'
-Warning[203]: Found opcode in column 1. (btfsc)
-0000CC B4D8           00166 btfsc STATUS,Z
-Warning[203]: Found opcode in column 1. (call)
-MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  12:44:02         PAGE  6
-
-
-LOC  OBJECT CODE     LINE SOURCE TEXT
-  VALUE
-
-0000CE EC?? F???      00167 call muc_2
-Warning[203]: Found opcode in column 1. (movf)
-0000D2 5041           00168 movf muc,0
-Warning[203]: Found opcode in column 1. (xorlw)
-0000D4 0A02           00169 xorlw D'2'
-Warning[203]: Found opcode in column 1. (btfsc)
-0000D6 B4D8           00170 btfsc STATUS,Z
-Warning[203]: Found opcode in column 1. (call)
-0000D8 EC?? F???      00171 call muc_1
-Warning[203]: Found opcode in column 1. (movff)
-0000DC C042 F041      00172 movff muc_temp, muc
-Warning[203]: Found opcode in column 1. (return)
-0000E0 0012           00173 return
-                      00174 
-                      00175 
+0000E4 0012           00175 return
                       00176 
-0000E2                00177 muc_0
+                      00177 
+                      00178 
+0000E6                00179 muc_0
 Warning[203]: Found opcode in column 1. (movlw)
-0000E2 0E00           00178 movlw 0x00
+0000E6 0E00           00180 movlw 0x00
 Warning[203]: Found opcode in column 1. (movwf)
-0000E4 6E42           00179 movwf muc_temp
+0000E8 6E42           00181 movwf muc_temp
 Warning[203]: Found opcode in column 1. (movlw)
-0000E6 0E01           00180 movlw 0x01                  ;clear lcd
+0000EA 0E01           00182 movlw 0x01                  ;clear lcd
 Warning[203]: Found opcode in column 1. (call)
-0000E8 EC?? F???      00181 call ghi_lenh
+0000EC EC?? F???      00183 call ghi_lenh
 Warning[203]: Found opcode in column 1. (movlw)
-0000EC 0E63           00182 movlw 0x63
+0000F0 0E63           00184 movlw 0x63
 Warning[203]: Found opcode in column 1. (movwf)
-0000EE 6ECB           00183 movwf PR2
+0000F2 6ECB           00185 movwf PR2
 Warning[203]: Found opcode in column 1. (movlw)
-0000F0 0E0C           00184 movlw 0x0c
+0000F4 0E0C           00186 movlw 0x0c
 Warning[203]: Found opcode in column 1. (movwf)
-0000F2 6EBD           00185 movwf CCP1CON
+0000F6 6EBD           00187 movwf CCP1CON
 Warning[203]: Found opcode in column 1. (movlw)
-0000F4 0E21           00186 movlw 0x21
+0000F8 0E21           00188 movlw 0x21
 Warning[203]: Found opcode in column 1. (movwf)
-0000F6 6EBE           00187 movwf CCPR1L
+0000FA 6EBE           00189 movwf CCPR1L
 Warning[203]: Found opcode in column 1. (movlw)
-0000F8 0E00           00188 movlw 0x00
+0000FC 0E00           00190 movlw 0x00
 Warning[203]: Found opcode in column 1. (movwf)
-0000FA 6ECA           00189 movwf T2CON
+0000FE 6ECA           00191 movwf T2CON
 Warning[203]: Found opcode in column 1. (movlw)
-0000FC 0E43           00190 movlw 'C'
+000100 0E43           00192 movlw 'C'
 Warning[203]: Found opcode in column 1. (call)
-0000FE EC?? F???      00191 call ghi_dulieu
+000102 EC?? F???      00193 call ghi_dulieu
 Warning[203]: Found opcode in column 1. (movlw)
-000102 0E61           00192 movlw 'a'
+000106 0E61           00194 movlw 'a'
 Warning[203]: Found opcode in column 1. (call)
-000104 EC?? F???      00193 call ghi_dulieu
-Warning[203]: Found opcode in column 1. (movlw)
-000108 0E69           00194 movlw 'i'
-Warning[203]: Found opcode in column 1. (call)
-00010A EC?? F???      00195 call ghi_dulieu
-MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  12:44:02         PAGE  7
+000108 EC?? F???      00195 call ghi_dulieu
+MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  20:09:48         PAGE  7
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
 Warning[203]: Found opcode in column 1. (movlw)
-00010E 0E20           00196 movlw ' '
+00010C 0E69           00196 movlw 'i'
 Warning[203]: Found opcode in column 1. (call)
-000110 EC?? F???      00197 call ghi_dulieu
+00010E EC?? F???      00197 call ghi_dulieu
 Warning[203]: Found opcode in column 1. (movlw)
-000114 0E64           00198 movlw 'd'
+000112 0E20           00198 movlw ' '
 Warning[203]: Found opcode in column 1. (call)
-000116 EC?? F???      00199 call ghi_dulieu
+000114 EC?? F???      00199 call ghi_dulieu
 Warning[203]: Found opcode in column 1. (movlw)
-00011A 0E61           00200 movlw 'a'
+000118 0E64           00200 movlw 'd'
 Warning[203]: Found opcode in column 1. (call)
-00011C EC?? F???      00201 call ghi_dulieu
+00011A EC?? F???      00201 call ghi_dulieu
 Warning[203]: Found opcode in column 1. (movlw)
-000120 0E74           00202 movlw 't'
+00011E 0E61           00202 movlw 'a'
 Warning[203]: Found opcode in column 1. (call)
-000122 EC?? F???      00203 call ghi_dulieu
+000120 EC?? F???      00203 call ghi_dulieu
 Warning[203]: Found opcode in column 1. (movlw)
-000126 0E3A           00204 movlw ':'
+000124 0E74           00204 movlw 't'
 Warning[203]: Found opcode in column 1. (call)
-000128 EC?? F???      00205 call ghi_dulieu
+000126 EC?? F???      00205 call ghi_dulieu
 Warning[203]: Found opcode in column 1. (movlw)
-00012C 0E30           00206 movlw '0'
+00012A 0E3A           00206 movlw ':'
 Warning[203]: Found opcode in column 1. (call)
-00012E EC?? F???      00207 call ghi_dulieu
+00012C EC?? F???      00207 call ghi_dulieu
 Warning[203]: Found opcode in column 1. (movlw)
-000132 0E25           00208 movlw '%'
+000130 0E30           00208 movlw '0'
 Warning[203]: Found opcode in column 1. (call)
-000134 EC?? F???      00209 call ghi_dulieu
+000132 EC?? F???      00209 call ghi_dulieu
 Warning[203]: Found opcode in column 1. (movlw)
-000138 0EC0           00210 movlw 0xc0              ;xuong hang 2
+000136 0E25           00210 movlw '%'
 Warning[203]: Found opcode in column 1. (call)
-00013A EC?? F???      00211 call ghi_lenh
+000138 EC?? F???      00211 call ghi_dulieu
+Warning[203]: Found opcode in column 1. (movlw)
+00013C 0EC0           00212 movlw 0xc0              ;xuong hang 2
+Warning[203]: Found opcode in column 1. (call)
+00013E EC?? F???      00213 call ghi_lenh
 Warning[203]: Found opcode in column 1. (return)
-00013E 0012           00212 return
-                      00213 
-                      00214 
-000140                00215 muc_1
+000142 0012           00214 return
+                      00215 
+                      00216 
+000144                00217 muc_1
 Warning[203]: Found opcode in column 1. (movlw)
-000140 0E01           00216 movlw 0x01
+000144 0E01           00218 movlw 0x01
 Warning[203]: Found opcode in column 1. (movwf)
-000142 6E42           00217 movwf muc_temp
+000146 6E42           00219 movwf muc_temp
 Warning[203]: Found opcode in column 1. (movlw)
-000144 0E01           00218 movlw 0x01                  ;clear lcd
+000148 0E01           00220 movlw 0x01                  ;clear lcd
 Warning[203]: Found opcode in column 1. (call)
-000146 EC?? F???      00219 call ghi_lenh
+00014A EC?? F???      00221 call ghi_lenh
 Warning[203]: Found opcode in column 1. (movlw)
-00014A 0E63           00220 movlw 0x63
+00014E 0E63           00222 movlw 0x63
 Warning[203]: Found opcode in column 1. (movwf)
-00014C 6ECB           00221 movwf PR2
-Warning[203]: Found opcode in column 1. (movlw)
-00014E 0E0C           00222 movlw 0x0c
-Warning[203]: Found opcode in column 1. (movwf)
-000150 6EBD           00223 movwf CCP1CON
-MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  12:44:02         PAGE  8
+000150 6ECB           00223 movwf PR2
+MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  20:09:48         PAGE  8
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
 Warning[203]: Found opcode in column 1. (movlw)
-000152 0E21           00224 movlw 0x21
+000152 0E0C           00224 movlw 0x0c
 Warning[203]: Found opcode in column 1. (movwf)
-000154 6EBE           00225 movwf CCPR1L
+000154 6EBD           00225 movwf CCP1CON
 Warning[203]: Found opcode in column 1. (movlw)
-000156 0E05           00226 movlw 0x05
+000156 0E21           00226 movlw 0x21
 Warning[203]: Found opcode in column 1. (movwf)
-000158 6ECA           00227 movwf T2CON
+000158 6EBE           00227 movwf CCPR1L
 Warning[203]: Found opcode in column 1. (movlw)
-00015A 0E43           00228 movlw 'C'
+00015A 0E05           00228 movlw 0x05
+Warning[203]: Found opcode in column 1. (movwf)
+00015C 6ECA           00229 movwf T2CON
+Warning[203]: Found opcode in column 1. (movlw)
+00015E 0E43           00230 movlw 'C'
 Warning[203]: Found opcode in column 1. (call)
-00015C EC?? F???      00229 call ghi_dulieu
+000160 EC?? F???      00231 call ghi_dulieu
 Warning[203]: Found opcode in column 1. (movlw)
-000160 0E61           00230 movlw 'a'
+000164 0E61           00232 movlw 'a'
 Warning[203]: Found opcode in column 1. (call)
-000162 EC?? F???      00231 call ghi_dulieu
+000166 EC?? F???      00233 call ghi_dulieu
 Warning[203]: Found opcode in column 1. (movlw)
-000166 0E69           00232 movlw 'i'
+00016A 0E69           00234 movlw 'i'
 Warning[203]: Found opcode in column 1. (call)
-000168 EC?? F???      00233 call ghi_dulieu
+00016C EC?? F???      00235 call ghi_dulieu
 Warning[203]: Found opcode in column 1. (movlw)
-00016C 0E20           00234 movlw ' '
+000170 0E20           00236 movlw ' '
 Warning[203]: Found opcode in column 1. (call)
-00016E EC?? F???      00235 call ghi_dulieu
+000172 EC?? F???      00237 call ghi_dulieu
 Warning[203]: Found opcode in column 1. (movlw)
-000172 0E64           00236 movlw 'd'
+000176 0E64           00238 movlw 'd'
 Warning[203]: Found opcode in column 1. (call)
-000174 EC?? F???      00237 call ghi_dulieu
+000178 EC?? F???      00239 call ghi_dulieu
 Warning[203]: Found opcode in column 1. (movlw)
-000178 0E61           00238 movlw 'a'
+00017C 0E61           00240 movlw 'a'
 Warning[203]: Found opcode in column 1. (call)
-00017A EC?? F???      00239 call ghi_dulieu
+00017E EC?? F???      00241 call ghi_dulieu
 Warning[203]: Found opcode in column 1. (movlw)
-00017E 0E74           00240 movlw 't'
+000182 0E74           00242 movlw 't'
 Warning[203]: Found opcode in column 1. (call)
-000180 EC?? F???      00241 call ghi_dulieu
+000184 EC?? F???      00243 call ghi_dulieu
 Warning[203]: Found opcode in column 1. (movlw)
-000184 0E3A           00242 movlw ':'
+000188 0E3A           00244 movlw ':'
 Warning[203]: Found opcode in column 1. (call)
-000186 EC?? F???      00243 call ghi_dulieu
+00018A EC?? F???      00245 call ghi_dulieu
 Warning[203]: Found opcode in column 1. (movlw)
-00018A 0E33           00244 movlw '3'
+00018E 0E33           00246 movlw '3'
 Warning[203]: Found opcode in column 1. (call)
-00018C EC?? F???      00245 call ghi_dulieu
+000190 EC?? F???      00247 call ghi_dulieu
 Warning[203]: Found opcode in column 1. (movlw)
-000190 0E33           00246 movlw '3'
+000194 0E33           00248 movlw '3'
 Warning[203]: Found opcode in column 1. (call)
-000192 EC?? F???      00247 call ghi_dulieu
+000196 EC?? F???      00249 call ghi_dulieu
 Warning[203]: Found opcode in column 1. (movlw)
-000196 0E25           00248 movlw '%'
-Warning[203]: Found opcode in column 1. (call)
-000198 EC?? F???      00249 call ghi_dulieu
-Warning[203]: Found opcode in column 1. (movlw)
-MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  12:44:02         PAGE  9
+MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  20:09:48         PAGE  9
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
-00019C 0EC0           00250 movlw 0xc0              ;xuong hang 2
+00019A 0E25           00250 movlw '%'
 Warning[203]: Found opcode in column 1. (call)
-00019E EC?? F???      00251 call ghi_lenh
+00019C EC?? F???      00251 call ghi_dulieu
+Warning[203]: Found opcode in column 1. (movlw)
+0001A0 0EC0           00252 movlw 0xc0              ;xuong hang 2
+Warning[203]: Found opcode in column 1. (call)
+0001A2 EC?? F???      00253 call ghi_lenh
 Warning[203]: Found opcode in column 1. (return)
-0001A2 0012           00252 return
-                      00253 
-                      00254 
-0001A4                00255 muc_2                   ;50%
+0001A6 0012           00254 return
+                      00255 
+                      00256 
+0001A8                00257 muc_2                   ;50%
 Warning[203]: Found opcode in column 1. (movlw)
-0001A4 0E02           00256 movlw 0x02
+0001A8 0E02           00258 movlw 0x02
 Warning[203]: Found opcode in column 1. (movwf)
-0001A6 6E42           00257 movwf muc_temp
+0001AA 6E42           00259 movwf muc_temp
 Warning[203]: Found opcode in column 1. (movlw)
-0001A8 0E01           00258 movlw 0x01                  ;clear lcd
+0001AC 0E01           00260 movlw 0x01                  ;clear lcd
 Warning[203]: Found opcode in column 1. (call)
-0001AA EC?? F???      00259 call ghi_lenh
+0001AE EC?? F???      00261 call ghi_lenh
 Warning[203]: Found opcode in column 1. (movlw)
-0001AE 0E63           00260 movlw 0x63
+0001B2 0E63           00262 movlw 0x63
 Warning[203]: Found opcode in column 1. (movwf)
-0001B0 6ECB           00261 movwf PR2
+0001B4 6ECB           00263 movwf PR2
 Warning[203]: Found opcode in column 1. (movlw)
-0001B2 0E0C           00262 movlw 0x0c
+0001B6 0E0C           00264 movlw 0x0c
 Warning[203]: Found opcode in column 1. (movwf)
-0001B4 6EBD           00263 movwf CCP1CON
+0001B8 6EBD           00265 movwf CCP1CON
 Warning[203]: Found opcode in column 1. (movlw)
-0001B6 0E32           00264 movlw 0x32
+0001BA 0E32           00266 movlw 0x32
 Warning[203]: Found opcode in column 1. (movwf)
-0001B8 6EBE           00265 movwf CCPR1L
+0001BC 6EBE           00267 movwf CCPR1L
 Warning[203]: Found opcode in column 1. (movlw)
-0001BA 0E05           00266 movlw 0x05
+0001BE 0E05           00268 movlw 0x05
 Warning[203]: Found opcode in column 1. (movwf)
-0001BC 6ECA           00267 movwf T2CON
+0001C0 6ECA           00269 movwf T2CON
 Warning[203]: Found opcode in column 1. (movlw)
-0001BE 0E43           00268 movlw 'C'
+0001C2 0E43           00270 movlw 'C'
 Warning[203]: Found opcode in column 1. (call)
-0001C0 EC?? F???      00269 call ghi_dulieu
+0001C4 EC?? F???      00271 call ghi_dulieu
 Warning[203]: Found opcode in column 1. (movlw)
-0001C4 0E61           00270 movlw 'a'
+0001C8 0E61           00272 movlw 'a'
 Warning[203]: Found opcode in column 1. (call)
-0001C6 EC?? F???      00271 call ghi_dulieu
+0001CA EC?? F???      00273 call ghi_dulieu
 Warning[203]: Found opcode in column 1. (movlw)
-0001CA 0E69           00272 movlw 'i'
+0001CE 0E69           00274 movlw 'i'
 Warning[203]: Found opcode in column 1. (call)
-0001CC EC?? F???      00273 call ghi_dulieu
+0001D0 EC?? F???      00275 call ghi_dulieu
 Warning[203]: Found opcode in column 1. (movlw)
-0001D0 0E20           00274 movlw ' '
+0001D4 0E20           00276 movlw ' '
 Warning[203]: Found opcode in column 1. (call)
-0001D2 EC?? F???      00275 call ghi_dulieu
+0001D6 EC?? F???      00277 call ghi_dulieu
 Warning[203]: Found opcode in column 1. (movlw)
-0001D6 0E64           00276 movlw 'd'
-Warning[203]: Found opcode in column 1. (call)
-0001D8 EC?? F???      00277 call ghi_dulieu
-Warning[203]: Found opcode in column 1. (movlw)
-MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  12:44:02         PAGE 10
+MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  20:09:48         PAGE 10
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
-0001DC 0E61           00278 movlw 'a'
+0001DA 0E64           00278 movlw 'd'
 Warning[203]: Found opcode in column 1. (call)
-0001DE EC?? F???      00279 call ghi_dulieu
+0001DC EC?? F???      00279 call ghi_dulieu
 Warning[203]: Found opcode in column 1. (movlw)
-0001E2 0E74           00280 movlw 't'
+0001E0 0E61           00280 movlw 'a'
 Warning[203]: Found opcode in column 1. (call)
-0001E4 EC?? F???      00281 call ghi_dulieu
+0001E2 EC?? F???      00281 call ghi_dulieu
 Warning[203]: Found opcode in column 1. (movlw)
-0001E8 0E3A           00282 movlw ':'
+0001E6 0E74           00282 movlw 't'
 Warning[203]: Found opcode in column 1. (call)
-0001EA EC?? F???      00283 call ghi_dulieu
+0001E8 EC?? F???      00283 call ghi_dulieu
 Warning[203]: Found opcode in column 1. (movlw)
-0001EE 0E35           00284 movlw '5'
+0001EC 0E3A           00284 movlw ':'
 Warning[203]: Found opcode in column 1. (call)
-0001F0 EC?? F???      00285 call ghi_dulieu
+0001EE EC?? F???      00285 call ghi_dulieu
 Warning[203]: Found opcode in column 1. (movlw)
-0001F4 0E30           00286 movlw '0'
+0001F2 0E35           00286 movlw '5'
 Warning[203]: Found opcode in column 1. (call)
-0001F6 EC?? F???      00287 call ghi_dulieu
+0001F4 EC?? F???      00287 call ghi_dulieu
 Warning[203]: Found opcode in column 1. (movlw)
-0001FA 0E25           00288 movlw '%'
+0001F8 0E30           00288 movlw '0'
 Warning[203]: Found opcode in column 1. (call)
-0001FC EC?? F???      00289 call ghi_dulieu
+0001FA EC?? F???      00289 call ghi_dulieu
 Warning[203]: Found opcode in column 1. (movlw)
-000200 0EC0           00290 movlw 0xc0              ;xuong hang 2
+0001FE 0E25           00290 movlw '%'
 Warning[203]: Found opcode in column 1. (call)
-000202 EC?? F???      00291 call ghi_lenh
+000200 EC?? F???      00291 call ghi_dulieu
+Warning[203]: Found opcode in column 1. (movlw)
+000204 0EC0           00292 movlw 0xc0              ;xuong hang 2
+Warning[203]: Found opcode in column 1. (call)
+000206 EC?? F???      00293 call ghi_lenh
 Warning[203]: Found opcode in column 1. (return)
-000206 0012           00292 return
-                      00293 
-000208                00294 muc_3                   ;66%
+00020A 0012           00294 return
+                      00295 
+00020C                00296 muc_3                   ;66%
 Warning[203]: Found opcode in column 1. (movlw)
-000208 0E03           00295 movlw 0x03
+00020C 0E03           00297 movlw 0x03
 Warning[203]: Found opcode in column 1. (movwf)
-00020A 6E42           00296 movwf muc_temp
+00020E 6E42           00298 movwf muc_temp
 Warning[203]: Found opcode in column 1. (movlw)
-00020C 0E01           00297 movlw 0x01                  ;clear lcd
+000210 0E01           00299 movlw 0x01                  ;clear lcd
 Warning[203]: Found opcode in column 1. (call)
-00020E EC?? F???      00298 call ghi_lenh
+000212 EC?? F???      00300 call ghi_lenh
 Warning[203]: Found opcode in column 1. (movlw)
-000212 0E63           00299 movlw 0x63
+000216 0E63           00301 movlw 0x63
 Warning[203]: Found opcode in column 1. (movwf)
-000214 6ECB           00300 movwf PR2
+000218 6ECB           00302 movwf PR2
 Warning[203]: Found opcode in column 1. (movlw)
-000216 0E0C           00301 movlw 0x0c
+00021A 0E0C           00303 movlw 0x0c
 Warning[203]: Found opcode in column 1. (movwf)
-000218 6EBD           00302 movwf CCP1CON
+00021C 6EBD           00304 movwf CCP1CON
 Warning[203]: Found opcode in column 1. (movlw)
-00021A 0E41           00303 movlw 0x41
-Warning[203]: Found opcode in column 1. (movwf)
-00021C 6EBE           00304 movwf CCPR1L
-Warning[203]: Found opcode in column 1. (movlw)
-00021E 0E05           00305 movlw 0x05
-MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  12:44:02         PAGE 11
+00021E 0E41           00305 movlw 0x41
+MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  20:09:48         PAGE 11
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
 Warning[203]: Found opcode in column 1. (movwf)
-000220 6ECA           00306 movwf T2CON
+000220 6EBE           00306 movwf CCPR1L
 Warning[203]: Found opcode in column 1. (movlw)
-000222 0E43           00307 movlw 'C'
-Warning[203]: Found opcode in column 1. (call)
-000224 EC?? F???      00308 call ghi_dulieu
+000222 0E05           00307 movlw 0x05
+Warning[203]: Found opcode in column 1. (movwf)
+000224 6ECA           00308 movwf T2CON
 Warning[203]: Found opcode in column 1. (movlw)
-000228 0E61           00309 movlw 'a'
+000226 0E43           00309 movlw 'C'
 Warning[203]: Found opcode in column 1. (call)
-00022A EC?? F???      00310 call ghi_dulieu
+000228 EC?? F???      00310 call ghi_dulieu
 Warning[203]: Found opcode in column 1. (movlw)
-00022E 0E69           00311 movlw 'i'
+00022C 0E61           00311 movlw 'a'
 Warning[203]: Found opcode in column 1. (call)
-000230 EC?? F???      00312 call ghi_dulieu
+00022E EC?? F???      00312 call ghi_dulieu
 Warning[203]: Found opcode in column 1. (movlw)
-000234 0E20           00313 movlw ' '
+000232 0E69           00313 movlw 'i'
 Warning[203]: Found opcode in column 1. (call)
-000236 EC?? F???      00314 call ghi_dulieu
+000234 EC?? F???      00314 call ghi_dulieu
 Warning[203]: Found opcode in column 1. (movlw)
-00023A 0E64           00315 movlw 'd'
+000238 0E20           00315 movlw ' '
 Warning[203]: Found opcode in column 1. (call)
-00023C EC?? F???      00316 call ghi_dulieu
+00023A EC?? F???      00316 call ghi_dulieu
 Warning[203]: Found opcode in column 1. (movlw)
-000240 0E61           00317 movlw 'a'
+00023E 0E64           00317 movlw 'd'
 Warning[203]: Found opcode in column 1. (call)
-000242 EC?? F???      00318 call ghi_dulieu
+000240 EC?? F???      00318 call ghi_dulieu
 Warning[203]: Found opcode in column 1. (movlw)
-000246 0E74           00319 movlw 't'
+000244 0E61           00319 movlw 'a'
 Warning[203]: Found opcode in column 1. (call)
-000248 EC?? F???      00320 call ghi_dulieu
+000246 EC?? F???      00320 call ghi_dulieu
 Warning[203]: Found opcode in column 1. (movlw)
-00024C 0E3A           00321 movlw ':'
+00024A 0E74           00321 movlw 't'
 Warning[203]: Found opcode in column 1. (call)
-00024E EC?? F???      00322 call ghi_dulieu
+00024C EC?? F???      00322 call ghi_dulieu
 Warning[203]: Found opcode in column 1. (movlw)
-000252 0E36           00323 movlw '6'
+000250 0E3A           00323 movlw ':'
 Warning[203]: Found opcode in column 1. (call)
-000254 EC?? F???      00324 call ghi_dulieu
+000252 EC?? F???      00324 call ghi_dulieu
 Warning[203]: Found opcode in column 1. (movlw)
-000258 0E36           00325 movlw '6'
+000256 0E36           00325 movlw '6'
 Warning[203]: Found opcode in column 1. (call)
-00025A EC?? F???      00326 call ghi_dulieu
+000258 EC?? F???      00326 call ghi_dulieu
 Warning[203]: Found opcode in column 1. (movlw)
-00025E 0E25           00327 movlw '%'
+00025C 0E36           00327 movlw '6'
 Warning[203]: Found opcode in column 1. (call)
-000260 EC?? F???      00328 call ghi_dulieu
+00025E EC?? F???      00328 call ghi_dulieu
 Warning[203]: Found opcode in column 1. (movlw)
-000264 0EC0           00329 movlw 0xc0              ;xuong hang 2
+000262 0E25           00329 movlw '%'
 Warning[203]: Found opcode in column 1. (call)
-000266 EC?? F???      00330 call ghi_lenh
+000264 EC?? F???      00330 call ghi_dulieu
+Warning[203]: Found opcode in column 1. (movlw)
+000268 0EC0           00331 movlw 0xc0              ;xuong hang 2
+Warning[203]: Found opcode in column 1. (call)
+MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  20:09:48         PAGE 12
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+00026A EC?? F???      00332 call ghi_lenh
 Warning[203]: Found opcode in column 1. (return)
-00026A 0012           00331 return
-                      00332 
-MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  12:44:02         PAGE 12
-
-
-LOC  OBJECT CODE     LINE SOURCE TEXT
-  VALUE
-
-                      00333 
+00026E 0012           00333 return
                       00334 
-00026C                00335 ghi_dulieu
+                      00335 
+                      00336 
+000270                00337 ghi_dulieu
 Warning[203]: Found opcode in column 1. (bcf)
-00026C 9C82           00336 bcf RW                  ;RW = 0
+000270 9C82           00338 bcf RW                  ;RW = 0
 Warning[203]: Found opcode in column 1. (bsf)
-00026E 8A82           00337 bsf RS                  ;RW = 1
+000272 8A82           00339 bsf RS                  ;RW = 1
 Warning[203]: Found opcode in column 1. (movwf)
-000270 6E83           00338 movwf PORTD
+000274 6E83           00340 movwf PORTD
 Warning[203]: Found opcode in column 1. (call)
-000272 EC?? F???      00339 call cho_phep
+000276 EC?? F???      00341 call cho_phep
 Warning[203]: Found opcode in column 1. (return)
-000276 0012           00340 return
-                      00341 
-                      00342 
-000278                00343 ghi_lenh
+00027A 0012           00342 return
+                      00343 
+                      00344 
+00027C                00345 ghi_lenh
 Warning[203]: Found opcode in column 1. (bcf)
-000278 9C82           00344 bcf RW
+00027C 9C82           00346 bcf RW
 Warning[203]: Found opcode in column 1. (bcf)
-00027A 9A82           00345 bcf RS
+00027E 9A82           00347 bcf RS
 Warning[203]: Found opcode in column 1. (movwf)
-00027C 6E83           00346 movwf PORTD
+000280 6E83           00348 movwf PORTD
 Warning[203]: Found opcode in column 1. (call)
-00027E EC?? F???      00347 call cho_phep
+000282 EC?? F???      00349 call cho_phep
 Warning[203]: Found opcode in column 1. (return)
-000282 0012           00348 return
-                      00349 
-                      00350 
-000284                00351 cho_phep
+000286 0012           00350 return
+                      00351 
+                      00352 
+000288                00353 cho_phep
 Warning[203]: Found opcode in column 1. (bsf)
-000284 8E82           00352 bsf E                   ;E=1
+000288 8E82           00354 bsf E                   ;E=1
 Warning[203]: Found opcode in column 1. (call)
-000286 EC?? F???      00353 call delay
+00028A EC?? F???      00355 call delay
 Warning[203]: Found opcode in column 1. (call)
-00028A EC?? F???      00354 call delay
+00028E EC?? F???      00356 call delay
 Warning[203]: Found opcode in column 1. (bcf)
-00028E 9E82           00355 bcf E                   ;E=0
+000292 9E82           00357 bcf E                   ;E=0
 Warning[203]: Found opcode in column 1. (call)
-000290 EC?? F???      00356 call delay
+000294 EC?? F???      00358 call delay
 Warning[203]: Found opcode in column 1. (call)
-000294 EC?? F???      00357 call delay
+000298 EC?? F???      00359 call delay
 Warning[203]: Found opcode in column 1. (call)
-000298 EC?? F???      00358 call delay
+00029C EC?? F???      00360 call delay
 Warning[203]: Found opcode in column 1. (call)
-00029C EC?? F???      00359 call delay
+0002A0 EC?? F???      00361 call delay
 Warning[203]: Found opcode in column 1. (call)
-0002A0 EC?? F???      00360 call delay
+0002A4 EC?? F???      00362 call delay
 Warning[203]: Found opcode in column 1. (call)
-0002A4 EC?? F???      00361 call delay
-Warning[203]: Found opcode in column 1. (return)
-0002A8 0012           00362 return
-                      00363 
-                      00364 
-MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  12:44:02         PAGE 13
+0002A8 EC?? F???      00363 call delay
+MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  20:09:48         PAGE 13
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
-0002AA                00365 delay                           ;delay 500us
+Warning[203]: Found opcode in column 1. (return)
+0002AC 0012           00364 return
+                      00365 
+                      00366 
+0002AE                00367 delay                           ;delay 500us
 Warning[203]: Found opcode in column 1. (movlw)
-0002AA 0EC7           00366 movlw D'199'                    ;T delay = 5(D+1)*/f, D 8 bit,
+0002AE 0EC7           00368 movlw D'199'                    ;T delay = 5(D+1)*/f, D 8 bit,
 Warning[203]: Found opcode in column 1. (movwf)
-0002AC 6E43           00367 movwf vong
-0002AE                00368 lap
+0002B0 6E43           00369 movwf vong
+0002B2                00370 lap
 Warning[203]: Found opcode in column 1. (nop)
-0002AE 0000           00369 nop
+0002B2 0000           00371 nop
 Warning[203]: Found opcode in column 1. (decfsz)
-0002B0 2E43           00370 decfsz vong
+0002B4 2E43           00372 decfsz vong
 Warning[203]: Found opcode in column 1. (goto)
-0002B2 EF?? F???      00371 goto lap
+0002B6 EF?? F???      00373 goto lap
 Warning[203]: Found opcode in column 1. (RETURN)
-0002B6 0012           00372 RETURN
-                      00373 
-                      00374 
-0002B8                00375 delay2                           ;delay >100ms
+0002BA 0012           00374 RETURN
+                      00375 
+                      00376 
+0002BC                00377 delay2                           ;delay >100ms
 Warning[203]: Found opcode in column 1. (movlw)
-0002B8 0EC7           00376 movlw D'199'                    ;T delay = 5(D+1)*/f, D 8 bit,
+0002BC 0EC7           00378 movlw D'199'                    ;T delay = 5(D+1)*/f, D 8 bit,
 Warning[203]: Found opcode in column 1. (movwf)
-0002BA 6E44           00377 movwf vong2
-0002BC                00378 lap2
+0002BE 6E44           00379 movwf vong2
+0002C0                00380 lap2
 Warning[203]: Found opcode in column 1. (call)
-0002BC EC?? F???      00379 call delay
+0002C0 EC?? F???      00381 call delay
 Warning[203]: Found opcode in column 1. (decfsz)
-0002C0 2E44           00380 decfsz vong2
+0002C4 2E44           00382 decfsz vong2
 Warning[203]: Found opcode in column 1. (goto)
-0002C2 EF?? F???      00381 goto lap2
+0002C6 EF?? F???      00383 goto lap2
 Warning[203]: Found opcode in column 1. (RETURN)
-0002C6 0012           00382 RETURN
-                      00383 
+0002CA 0012           00384 RETURN
+                      00385 
 Warning[205]: Found directive in column 1. (end)
-                      00384 end
-MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  12:44:02         PAGE 14
+                      00386 end
+MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  20:09:48         PAGE 14
 
 
 SYMBOL TABLE
@@ -804,7 +808,7 @@ BCLIP                             00000003
 BF                                00000000
 BGST                              00000005
 BOR                               00000000
-MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  12:44:02         PAGE 15
+MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  20:09:48         PAGE 15
 
 
 SYMBOL TABLE
@@ -863,7 +867,7 @@ CLKI                              00000007
 CLKO                              00000006
 CM0                               00000000
 CM1                               00000001
-MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  12:44:02         PAGE 16
+MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  20:09:48         PAGE 16
 
 
 SYMBOL TABLE
@@ -901,7 +905,7 @@ DDRE                              TRISE
 DONE                              00000001
 D_A                               00000005
 D_NOT_A                           00000005
-Down                              000000C0
+Down                              000000C4
 E                                 PORTC,7
 ECCP1AS                           00000FB6
 ECCP1DEL                          00000FB7
@@ -922,7 +926,7 @@ FAST                              00000001
 FERR                              00000002
 FLT0                              00000000
 FLTS                              00000002
-MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  12:44:02         PAGE 17
+MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  20:09:48         PAGE 17
 
 
 SYMBOL TABLE
@@ -981,7 +985,7 @@ INT2IE                            00000004
 INT2IF                            00000001
 INT2IP                            00000007
 INT2P                             00000007
-MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  12:44:02         PAGE 18
+MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  20:09:48         PAGE 18
 
 
 SYMBOL TABLE
@@ -1040,7 +1044,7 @@ LATD1                             00000001
 LATD2                             00000002
 LATD3                             00000003
 LATD4                             00000004
-MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  12:44:02         PAGE 19
+MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  20:09:48         PAGE 19
 
 
 SYMBOL TABLE
@@ -1099,7 +1103,7 @@ OSCTUNE                           00000F9B
 OSTS                              00000003
 OV                                00000003
 P                                 00000004
-MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  12:44:02         PAGE 20
+MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  20:09:48         PAGE 20
 
 
 SYMBOL TABLE
@@ -1158,7 +1162,7 @@ PREINC0                           00000FEC
 PREINC1                           00000FE4
 PREINC2                           00000FDC
 PROD                              00000FF3
-MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  12:44:02         PAGE 21
+MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  20:09:48         PAGE 21
 
 
 SYMBOL TABLE
@@ -1217,7 +1221,7 @@ RC7                               00000007
 RCEN                              00000003
 RCIDL                             00000006
 RCIE                              00000005
-MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  12:44:02         PAGE 22
+MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  20:09:48         PAGE 22
 
 
 SYMBOL TABLE
@@ -1276,7 +1280,7 @@ SPBRGH                            00000FB0
 SPEN                              00000007
 SREN                              00000005
 SS                                00000005
-MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  12:44:02         PAGE 23
+MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  20:09:48         PAGE 23
 
 
 SYMBOL TABLE
@@ -1335,7 +1339,7 @@ T2OUTPS1                          00000004
 T2OUTPS2                          00000005
 T2OUTPS3                          00000006
 T3CCP1                            00000003
-MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  12:44:02         PAGE 24
+MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  20:09:48         PAGE 24
 
 
 SYMBOL TABLE
@@ -1394,7 +1398,7 @@ TRISA1                            00000001
 TRISA2                            00000002
 TRISA3                            00000003
 TRISA4                            00000004
-MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  12:44:02         PAGE 25
+MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  20:09:48         PAGE 25
 
 
 SYMBOL TABLE
@@ -1451,9 +1455,9 @@ TXIP                              00000004
 TXREG                             00000FAD
 TXSTA                             00000FAC
 UA                                00000001
-Up                                0000009E
+Up                                000000A2
 VCFG0                             00000004
-MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  12:44:02         PAGE 26
+MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  20:09:48         PAGE 26
 
 
 SYMBOL TABLE
@@ -1512,7 +1516,7 @@ _DEBUG_ON_4L                      0000007F
 _DEVID1                           003FFFFE
 _DEVID2                           003FFFFF
 _EBTR0_OFF_7L                     000000FF
-MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  12:44:02         PAGE 27
+MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  20:09:48         PAGE 27
 
 
 SYMBOL TABLE
@@ -1571,7 +1575,7 @@ _WDTPS_256_2H                     000000F1
 _WDTPS_2_2H                       000000E3
 _WDTPS_32768_2H                   000000FF
 _WDTPS_32_2H                      000000EB
-MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  12:44:02         PAGE 28
+MPASM 5.54                NEWASMTEMPLATE.ASM   4-27-2021  20:09:48         PAGE 28
 
 
 SYMBOL TABLE
@@ -1602,28 +1606,28 @@ _WRTD_ON_6H                       0000007F
 _XINST_OFF_4L                     000000BF
 _XINST_ON_4L                      000000FF
 __18F4520                         00000001
-cho_phep                          00000284
-delay                             000002AA
-delay2                            000002B8
+cho_phep                          00000288
+delay                             000002AE
+delay2                            000002BC
 dulieu                            00000040
-ghi_dulieu                        0000026C
-ghi_lenh                          00000278
-lap                               000002AE
-lap2                              000002BC
+ghi_dulieu                        00000270
+ghi_lenh                          0000027C
+lap                               000002B2
+lap2                              000002C0
 loop                              00000080
 main                              00000050
 muc                               00000041
-muc_0                             000000E2
-muc_1                             00000140
-muc_2                             000001A4
-muc_3                             00000208
+muc_0                             000000E6
+muc_1                             00000144
+muc_2                             000001A8
+muc_3                             0000020C
 muc_temp                          00000042
-start                             00000084
+start                             00000088
 vong                              00000043
 vong2                             00000044
 
 Errors   :     0
-Warnings :   260 reported,     0 suppressed
+Warnings :   262 reported,     0 suppressed
 Messages :     0 reported,     0 suppressed
 
 

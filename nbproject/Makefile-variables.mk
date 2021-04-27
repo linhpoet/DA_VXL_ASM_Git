@@ -6,8 +6,8 @@
 CND_BASEDIR=`pwd`
 # default configuration
 CND_ARTIFACT_DIR_default=dist/default/production
-CND_ARTIFACT_NAME_default=full_temp.X.production.hex
-CND_ARTIFACT_PATH_default=dist/default/production/full_temp.X.production.hex
+CND_ARTIFACT_NAME_default=DA_VXL_ASM_Git.production.hex
+CND_ARTIFACT_PATH_default=dist/default/production/DA_VXL_ASM_Git.production.hex
 CND_PACKAGE_DIR_default=${CND_DISTDIR}/default/package
-CND_PACKAGE_NAME_default=fulltemp.x.tar
-CND_PACKAGE_PATH_default=${CND_DISTDIR}/default/package/fulltemp.x.tar
+CND_PACKAGE_NAME_default=davxlasmgit.tar
+CND_PACKAGE_PATH_default=${CND_DISTDIR}/default/package/davxlasmgit.tar

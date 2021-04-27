@@ -122,6 +122,8 @@ call ghi_lenh
 call muc_0
 movff muc_temp, muc
 loop
+movlw 0x00
+movwf INTCON
 goto loop
 
 
