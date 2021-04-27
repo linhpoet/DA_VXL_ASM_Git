@@ -123,7 +123,7 @@ call muc_0
 movff muc_temp, muc
 loop
 movlw 0x00
-movwf INTCON
+movwf T1CON
 goto loop
 
 
