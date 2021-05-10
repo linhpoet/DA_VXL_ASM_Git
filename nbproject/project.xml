@@ -2,7 +2,7 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>full_temp</name>
+            <name>DA_VXL_ASM_Git</name>
             <creation-uuid>9e1f5e18-1d96-4d9e-891d-02c22e95b5d7</creation-uuid>
             <make-project-type>0</make-project-type>
             <c-extensions/>

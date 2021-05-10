@@ -1,5 +1,5 @@
 MPLINK 5.00, LINKER
-Linker Map File - Created Tue Apr 27 20:14:19 2021
+Linker Map File - Created Mon May 10 16:53:54 2021
 
                                  Section Info
                   Section       Type    Address   Location Size(Bytes)
@@ -7,7 +7,7 @@ Linker Map File - Created Tue Apr 27 20:14:19 2021
                    .org_0       code   0x000000    program   0x000004
                    .cinit    romdata   0x000004    program   0x000002
                    .org_1       code   0x000008    program   0x00002e
-                   .org_2       code   0x000050    program   0x00027c
+                   .org_2       code   0x000100    program   0x000388
 .config_300001_BUILD/DEFAULT/PRODUCTION/NEWASMT    romdata   0x300001    program   0x000001
 .config_300002_BUILD/DEFAULT/PRODUCTION/NEWASMT    romdata   0x300002    program   0x000001
 .config_300003_BUILD/DEFAULT/PRODUCTION/NEWASMT    romdata   0x300003    program   0x000001
@@ -27,54 +27,64 @@ Linker Map File - Created Tue Apr 27 20:14:19 2021
                            ---------   ---------      
                             0x000000    0x000005      
                             0x000008    0x000035      
-                            0x000050    0x0002cb      
+                            0x000100    0x000487      
                             0x300001    0x300003      
                             0x300005    0x300006      
                             0x300008    0x30000d      
-            699 out of 33048 program addresses used, program memory utilization is 2%
+            967 out of 33048 program addresses used, program memory utilization is 2%
 
 
 
                               Symbols - Sorted by Name
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
-                     Down   0x0000c4    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
-                       Up   0x0000a2    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
-                 cho_phep   0x000288    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
-                    delay   0x0002ae    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
-                   delay2   0x0002bc    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
-               ghi_dulieu   0x000270    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
-                 ghi_lenh   0x00027c    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
-                      lap   0x0002b2    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
-                     lap2   0x0002c0    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
-                     loop   0x000080    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
-                     main   0x000050    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
-                    muc_0   0x0000e6    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
-                    muc_1   0x000144    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
-                    muc_2   0x0001a8    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
-                    muc_3   0x00020c    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
-                    start   0x000088    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
+            CHUYENDOICHUC   0x00022c    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
+            CHUYENDOITRAM   0x000220    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
+                     Down   0x000280    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
+                     LAP1   0x000238    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
+                     LAP2   0x00023e    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
+                       Up   0x00025e    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
+                 cho_phep   0x000444    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
+                    delay   0x00046a    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
+                   delay2   0x000478    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
+               ghi_dulieu   0x00042c    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
+                 ghi_lenh   0x000438    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
+                      lap   0x00046e    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
+                     lap2   0x00047c    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
+                     loop   0x00013e    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
+                     main   0x000100    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
+                    muc_0   0x0002a2    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
+                    muc_1   0x000300    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
+                    muc_2   0x000364    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
+                    muc_3   0x0003c8    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
+                    start   0x000244    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
+              tinh_toc_do   0x0001da    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
 
 
 
                               Symbols - Sorted by Address
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
-                     main   0x000050    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
-                     loop   0x000080    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
-                    start   0x000088    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
-                       Up   0x0000a2    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
-                     Down   0x0000c4    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
-                    muc_0   0x0000e6    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
-                    muc_1   0x000144    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
-                    muc_2   0x0001a8    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
-                    muc_3   0x00020c    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
-               ghi_dulieu   0x000270    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
-                 ghi_lenh   0x00027c    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
-                 cho_phep   0x000288    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
-                    delay   0x0002ae    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
-                      lap   0x0002b2    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
-                   delay2   0x0002bc    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
-                     lap2   0x0002c0    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
+                     main   0x000100    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
+                     loop   0x00013e    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
+              tinh_toc_do   0x0001da    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
+            CHUYENDOITRAM   0x000220    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
+            CHUYENDOICHUC   0x00022c    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
+                     LAP1   0x000238    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
+                     LAP2   0x00023e    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
+                    start   0x000244    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
+                       Up   0x00025e    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
+                     Down   0x000280    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
+                    muc_0   0x0002a2    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
+                    muc_1   0x000300    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
+                    muc_2   0x000364    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
+                    muc_3   0x0003c8    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
+               ghi_dulieu   0x00042c    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
+                 ghi_lenh   0x000438    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
+                 cho_phep   0x000444    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
+                    delay   0x00046a    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
+                      lap   0x00046e    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
+                   delay2   0x000478    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
+                     lap2   0x00047c    program     static E:\Desktop\Hoc\DA_Vxl_Vdk\Assembly\DA_VXL_ASM_Git\newAsmTemplate.asm
 
 
